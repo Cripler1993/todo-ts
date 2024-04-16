@@ -5,13 +5,18 @@ export default function ToDoFilter({
   selectedFilter,
   setSelectedFilter,
   setToDoArr,
+  toDoArr,
 }) {
+  let toDoItemsLeft = toDoArr.filter((elem) => {
+    return elem.isComplete == false;
+  });
+  console.log(toDoItemsLeft);
   function clearToDo() {
     setToDoArr(() => []);
   }
   return (
     <div>
-      <span>2 items left</span>
+      <span>{toDoItemsLeft.length}items left</span>
       {filters.map((elem, index) => {
         return (
           <button

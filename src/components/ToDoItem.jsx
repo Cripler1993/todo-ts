@@ -13,7 +13,7 @@ export default function ToDoItem({ elem, setToDoArr }) {
   }
   console.log(elem);
   return (
-    <div>
+    <div className="todo__item">
       <div className="checkbox-wrapper-15">
         <input
           disabled={elem.isComplete == true}
