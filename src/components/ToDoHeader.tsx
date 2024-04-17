@@ -1,13 +1,10 @@
 import React, { useState } from "react";
+interface ToDoHeaderProps {
+  addToDoItem: (pText: string) => void;
+}
 
-export default function ToDoHeader({ setToDoArr }) {
-  function addToDoItem(pText) {
-    setToDoArr((prev) => [
-      ...prev,
-      { isComplete: false, id: Date.now(), text: pText },
-    ]);
-  }
-  const [text, setText] = useState("");
+export default function ToDoHeader({ addToDoItem }: ToDoHeaderProps) {
+  const [text, setText] = useState<string>("");
   return (
     <header>
       <div className="container">
